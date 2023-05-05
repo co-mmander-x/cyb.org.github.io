@@ -87,7 +87,7 @@ header .navigation__wrapper #primary__navigation .menu li {transition: 250ms eas
 header .navigation__wrapper #primary__navigation .menu li > a {padding: 2rem 1rem; color: #001141;}
 header .navigation__wrapper #primary__navigation .menu {display: flex; gap: 1.5rem;}
 header .mobile__navigation {display: none; position: relative; z-index: 1000;}
-header .mobile__navigation > img {width: 24px; height: 24px; cursor: pointer; margin: 1rem;}
+header .mobile__navigation > img {width: 24px; height: 24px; cursor: pointer; margin: 1rem 0 1rem 1rem;}
 
 /* Navigation Active */
 header .navigation__wrapper #primary__navigation .menu li.current__item, header .navigation__wrapper #primary__navigation .menu li:hover {background-color: #EDF5FF;}
@@ -112,7 +112,7 @@ header.active {background-color: #FFF; box-shadow: 0px 16px 24px rgba(2, 22, 36,
 /* Programmation Section */
 /* Concerts */
 .concerts-wrapper .artists-wrapper {margin-top: 3rem; display: flex; flex-wrap: wrap; column-gap: 1.2rem; row-gap: 4rem;}
-.concerts-wrapper .artist-card {width: calc(100% / 4 - 1.2rem); --notchSize: 10px; clip-path: polygon( 0% var(--notchSize), /* Top left */ var(--notchSize) 0%, /* Top left */ 100% 0%, /* Top right */ 100% var(--notchSize), /* Top right */ 100% calc(100% - var(--notchSize)), /* Bottom right */ calc(100% - var(--notchSize)) 100%, /* Bottom right */ var(--notchSize) 100%, /* Bottom left */ 0% 100% /* Bottom left */); background-color: #FFF; transition: 250ms ease;}
+.concerts-wrapper .artist-card {width: calc(100% / 4 - 0.90rem); --notchSize: 10px; clip-path: polygon( 0% var(--notchSize), /* Top left */ var(--notchSize) 0%, /* Top left */ 100% 0%, /* Top right */ 100% var(--notchSize), /* Top right */ 100% calc(100% - var(--notchSize)), /* Bottom right */ calc(100% - var(--notchSize)) 100%, /* Bottom right */ var(--notchSize) 100%, /* Bottom left */ 0% 100% /* Bottom left */); background-color: #FFF; transition: 250ms ease;}
 .concerts-wrapper .artist-card:hover {transform: scale(1.02);}
 .concerts-wrapper .artist-card > img {aspect-ratio: 1/1; object-fit: cover; max-width: 380px;}
 .concerts-wrapper .artist-card .artist-content > span {margin: 0.75rem 0 0.25rem 0;}
@@ -363,7 +363,7 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
 
     /* Programmation Section */
     /* Concerts */
-    .concerts-wrapper .artist-card {width: calc(100% / 3 - 1.2rem);}
+    .concerts-wrapper .artist-card {width: calc(100% / 3 - 0.80rem);}
 
 }
 @media screen and (max-width: 768px) {
@@ -404,7 +404,7 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
     
     /* Programmation Section */
     /* Concerts */
-    .concerts-wrapper .artist-card {width: calc(100% / 2 - 1.2rem);}
+    .concerts-wrapper .artist-card {width: calc(100% / 2 - 0.6rem);}
 
     /* Conférences */
     .conferences-wrapper .content-wrapper {justify-content: center;}
