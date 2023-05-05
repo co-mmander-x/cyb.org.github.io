@@ -87,7 +87,7 @@ header .navigation__wrapper #primary__navigation .menu li {transition: 250ms eas
 header .navigation__wrapper #primary__navigation .menu li > a {padding: 2rem 1rem; color: #001141;}
 header .navigation__wrapper #primary__navigation .menu {display: flex; gap: 1.5rem;}
 header .mobile__navigation {display: none; position: relative; z-index: 1000;}
-header .mobile__navigation > img {width: 24px; height: 24px; margin: 1rem; cursor: pointer;}
+header .mobile__navigation > img {width: 24px; height: 24px; cursor: pointer; margin: 1rem;}
 
 /* Navigation Active */
 header .navigation__wrapper #primary__navigation .menu li.current__item, header .navigation__wrapper #primary__navigation .menu li:hover {background-color: #EDF5FF;}
@@ -331,10 +331,14 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
     .container {max-width: 960px;}
 
     /* Titles */
+    h2 {font-size: 42px; line-height: 50px;}
+    h3 {font-size: 32px; line-height: 42px;}
+    h4 {font-size: 28px; line-height: 36px;}
     .heading-07 {font-size: 2.625rem; line-height: 50px;}
     .heading-06 {font-size: 2rem; line-height: 40px;}
     .heading-05 {font-size: 1.25rem; line-height: 28px;}
     .heading-04 {font-size: 1.25rem; line-height: 28px;}
+    .lead {font-size: 1rem; line-height: 24px;}
 
     /* Header */
     /* Navigation */
@@ -381,18 +385,41 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
     .conferences-wrapper .content-wrapper {row-gap: 1.2rem;}
 
     /* Panel */
-    .panel-wrapper .content-wrapper {row-gap: 1.2rem;}
+    .panel-wrapper .content-wrapper {align-items: start; row-gap: 1.2rem;}
 
     /* Programmation Banner */
     .concerts-wrapper .programmation-banner {width: calc(100%); background-color: #F4F4F4; padding: 2rem; text-align: center;}
     .programmation-banner {padding: 2rem;}
 
-    /* Application */
-    #application-cybsafe__section > h2 {text-align: left;}
-    .application-wrapper {display: flex; flex-wrap: wrap; justify-content: center; margin-top: 0; row-gap: 1.5rem;}
-    .application-wrapper > img {width: 40%;margin-top: 2.5rem;}
+    /* Application Overview */
+    /* Application Overview */
+    #application-cybsafe__section > h2 {text-align: center;}
+    .application-wrapper {flex-wrap: wrap; justify-content: center; row-gap: 1.5rem;} 
+    .application-wrapper > img {max-width: 260px;}
     .application-wrapper .content-wrapper {width: 100%; order: 2;}
-    .application-wrapper .content-wrapper > a {display: block; text-align: center;}
+    .application-wrapper .content-wrapper > h3 {margin-bottom: 1.5rem;}
+    .application-wrapper .content-wrapper > a {width: 100%; text-align: center;}
+    .application-wrapper .content-wrapper ul li {padding: 1rem 0 1rem calc(1rem + 8px);}
+    .application-wrapper .content-wrapper ul li::before {top: 1rem; width: 20px; height: 20px; background-size: contain;}
+    
+    /* Service CybSafe */
+    .application-wrapper .media-wrapper img {max-width: 260px;}
+    .application-wrapper.cybsafe .media-wrapper .features-wrapper.chat {display: none!important;}
+    .application-wrapper.cybsafe .media-wrapper .features-wrapper.alert {bottom: 100px; left: -28px; width: 100%;}
+    .application-wrapper.cybsafe .media-wrapper .features-wrapper.localisation {top: 120px; right: -40px;}
+    .application-wrapper.cybsafe .media-wrapper .features-wrapper.localisation > svg {transform: rotate(178deg); animation-name: svgWidth;}
+    @keyframes svgWidth {
+        to {
+            width: 70%;
+        }
+    }
+
+    .outer-circle.current-location {left: -110px; bottom: -80px;}
+
+    /* Interactive Map */
+    .activity-wrapper {display: none;}
+    .application-wrapper.interactive-map .media-wrapper .outer-circle.drink.pulse {top: 228px; left: 56px;}
+    .application-wrapper.interactive-map .media-wrapper .outer-circle.current-location {top: 200px; left: 60px;}
 
     /* Footer */
     footer .footer-top__wrapper {padding: 4rem 0 2rem 0; row-gap: 2rem;}
@@ -402,9 +429,6 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
 }
 @media screen and (max-width: 576px) {
     .container {max-width: 540px;}
-
-    /* Main */
-    main section {margin: 6rem 0;}
     
     /* Programmation Section */
     /* Concerts */
