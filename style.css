@@ -343,7 +343,8 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
     /* Header */
     /* Navigation */
     header .navigation__wrapper #primary__navigation {position: fixed; top: 0; left: 0; background-color: #FFF; width: 100%; height: 100%; padding-top: calc(56px + 4rem ); transform: translateX(100%); transition: 250ms ease;}
-    header .navigation__wrapper #primary__navigation .menu {flex-direction: column; align-items: center; gap: 1.2rem;}
+    header .navigation__wrapper #primary__navigation .menu {flex-direction: column; align-items: center; gap: 0;}
+    header .navigation__wrapper #primary__navigation .menu li {display: block; width: 100%; text-align: center;}
     header .navigation__wrapper #primary__navigation .menu li > a {padding: 1.5rem;}
     header .mobile__navigation {display: flex; align-items: center; justify-content: center;}
     header .mobile__navigation > .close {display: none; animation: rotateCross; animation-duration: 250ms; animation-timing-function: ease;}
