@@ -21,7 +21,7 @@ for(let i = 0; i < menuLinks.length; i++) {
     menuLinks[i].addEventListener('click', () => {
         for(let x = 0; x < menuLinks.length; x++) {
             menuLinks[x].classList.remove('current__item');
-
+            document.querySelector('.navigation__wrapper').classList.remove('active');
         }
         menuLinks[i].classList.add('current__item');
     });

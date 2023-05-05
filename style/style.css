@@ -81,13 +81,13 @@ p {margin-bottom: 1rem;}
 /* Navigation */
 header {position: fixed; top: 0; left: 0; z-index: 1000; width: 100%;}
 header .navigation__wrapper {display: flex; align-items: center; justify-content: space-between;}
-header .navigation__wrapper .logo {position: relative; z-index: 1000;}
+header .navigation__wrapper .logo {position: relative; z-index: 1000; margin: 1rem 0;}
 header .navigation__wrapper #primary__navigation {padding-top: 0;}
 header .navigation__wrapper #primary__navigation .menu li {transition: 250ms ease;}
 header .navigation__wrapper #primary__navigation .menu li > a {padding: 2rem 1rem; color: #001141;}
 header .navigation__wrapper #primary__navigation .menu {display: flex; gap: 1.5rem;}
 header .mobile__navigation {display: none; position: relative; z-index: 1000;}
-header .mobile__navigation > img {width: 24px; height: 24px; padding: 1rem; cursor: pointer;}
+header .mobile__navigation > img {width: 24px; height: 24px; margin: 1rem; cursor: pointer;}
 
 /* Navigation Active */
 header .navigation__wrapper #primary__navigation .menu li.current__item, header .navigation__wrapper #primary__navigation .menu li:hover {background-color: #EDF5FF;}
