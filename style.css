@@ -40,6 +40,7 @@ h3 {font-family: 'PP Fragment Serif'; font-size: 2.625rem; font-weight: 700; lin
 .heading-03 {font-family: 'PP Fragment Serif'; font-size: 1.25rem; font-weight: 700; line-height: 28px; color: #001141;}
 .heading-04 {font-family: 'PP Fragment Serif'; font-size: 1.75rem; font-weight: 700; line-height: 36px; color: #001141;}
 .heading-05 {font-family: 'PP Fragment Serif'; font-size: 2rem; font-weight: 700; line-height: 40px; color: #001141;}
+.heading-07 {font-size: 4.625rem; font-weight: 400; line-height: 112px; color: #001141;}
 .heading-compact-02 {font-family: 'PP Fragment Serif'; font-size: 1rem; line-height: 22px; font-weight: 700; color: #001141;}
 .body-01 {font-family: 'PP Fragment Sans'; font-size: 0.875rem; font-weight: 400; line-height: 20px;}
 .body-02 {font-family: 'PP Fragment Sans'; font-size: 1rem; font-weight: 400; line-height: 24px;}
@@ -77,6 +78,10 @@ p {margin-bottom: 1rem;}
 .content-switcher input[type="radio"]+label {padding: 0.75rem 2rem; background-color: #FFF; color: #4D5EFF; display: block; text-align: center; cursor: pointer; transition: 250ms cubic-bezier(0.470, 0.000, 0.745, 0.715);}
 .content-switcher input[type="radio"]:checked+label {background-color: #4D5EFF; color: #FFF;}
 
+/* Icons */
+.material-icons {display: none;}
+.material-icons > .material-icon {fill: #001141; width: 40px; height: 40px;}
+
 /* Header */
 /* Navigation */
 header {position: fixed; top: 0; left: 0; z-index: 1000; width: 100%;}
@@ -87,7 +92,7 @@ header .navigation__wrapper #primary__navigation .menu li {transition: 250ms eas
 header .navigation__wrapper #primary__navigation .menu li > a {padding: 2rem 1rem; color: #001141;}
 header .navigation__wrapper #primary__navigation .menu {display: flex; gap: 1.5rem;}
 header .mobile__navigation {display: none; position: relative; z-index: 1000;}
-header .mobile__navigation > img {width: 24px; height: 24px; cursor: pointer; margin: 1rem 0 1rem 1rem;}
+header .mobile__navigation > svg {cursor: pointer; margin: 1rem 0 1rem 1rem;}
 
 /* Navigation Active */
 header .navigation__wrapper #primary__navigation .menu li.current__item, header .navigation__wrapper #primary__navigation .menu li:hover {background-color: #EDF5FF;}
@@ -104,15 +109,26 @@ header.active {background-color: #FFF; box-shadow: 0px 16px 24px rgba(2, 22, 36,
 }
 
 /* Main */
+main {overflow: hidden;}
 #heading__section, #programmation__section, #application-cybsafe__section {grid-column-start: 2; grid-column-end: span 10;}
 .concerts-wrapper, .conferences-wrapper, .panel-wrapper, #application-cybsafe__section, .application-wrapper.cybsafe {margin: 10rem 0;}
 
 /* Heading Section */
+/* Reassurance banner */
+.reassurance-banner {margin-top: 10rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;}
+.reassurance-banner .reassurance-wrapper {position: relative;}
+.reassurance-banner .reassurance-wrapper:nth-child(2) svg {transform: rotate(180deg);}
+.reassurance-banner .reassurance-wrapper:nth-child(3) svg {transform: matrix(1, 0, 0, -1, 0, 0);}
+.reassurance-banner .reassurance-wrapper > svg {width: 300px; height: 300px;}
+.reassurance-banner .reassurance-wrapper > div {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -60%); text-align: center; z-index: 300;}
+.reassurance-banner .reassurance-wrapper > div span {color: #FFF;}
 
 /* Programmation Section */
 /* Concerts */
-.concerts-wrapper .artists-wrapper {margin-top: 3rem; display: flex; flex-wrap: wrap; column-gap: 1.2rem; row-gap: 4rem;}
-.concerts-wrapper .artist-card {width: calc(100% / 4 - 0.90rem); --notchSize: 10px; clip-path: polygon( 0% var(--notchSize), /* Top left */ var(--notchSize) 0%, /* Top left */ 100% 0%, /* Top right */ 100% var(--notchSize), /* Top right */ 100% calc(100% - var(--notchSize)), /* Bottom right */ calc(100% - var(--notchSize)) 100%, /* Bottom right */ var(--notchSize) 100%, /* Bottom left */ 0% 100% /* Bottom left */); background-color: #FFF; transition: 250ms ease;}
+.concerts-wrapper {position: relative;}
+.concerts-wrapper .blop-bottom {position: absolute; bottom: -60px; right: -270px; width: 100%; height: 60%; fill: #F4F4F4;}
+.concerts-wrapper .artists-wrapper {margin-top: 3rem; display: flex; flex-wrap: wrap; justify-content: space-between; column-gap: 1.25rem; row-gap: 4rem; position: relative; z-index: 200;}
+.concerts-wrapper .artist-card {flex-basis: calc(100% / 4 - 1.25rem); --notchSize: 10px; clip-path: polygon( 0% var(--notchSize), /* Top left */ var(--notchSize) 0%, /* Top left */ 100% 0%, /* Top right */ 100% var(--notchSize), /* Top right */ 100% calc(100% - var(--notchSize)), /* Bottom right */ calc(100% - var(--notchSize)) 100%, /* Bottom right */ var(--notchSize) 100%, /* Bottom left */ 0% 100% /* Bottom left */); transition: 250ms ease;}
 .concerts-wrapper .artist-card:hover {transform: scale(1.02);}
 .concerts-wrapper .artist-card > img {aspect-ratio: 1/1; object-fit: cover; max-width: 380px;}
 .concerts-wrapper .artist-card .artist-content > span {margin: 0.75rem 0 0.25rem 0;}
@@ -126,8 +142,8 @@ header.active {background-color: #FFF; box-shadow: 0px 16px 24px rgba(2, 22, 36,
 .panel-wrapper .content-wrapper ul > li {padding: 1.5rem 0; border-bottom: 1px solid #4D5EFF; display: block;}
 
 /* Programmation Banner */
-.concerts-wrapper .programmation-banner {width: calc(100% / 2 - 1.5rem * 2); padding: 0.5rem 1.5rem; text-align: left; background-color: #FFF;}
-.programmation-banner {text-align: center; padding: 4rem; background-color: #F4F4F4;}
+.concerts-wrapper .programmation-banner {flex-basis: calc(100% / 2); padding: 1rem 1.5rem; text-align: left;}
+.programmation-banner {text-align: center; padding: 4rem;}
 .programmation-banner > h3 {margin-bottom: 1.5rem;}
 .programmation-banner > a {margin-top: 1rem;}
 
@@ -155,18 +171,19 @@ header.active {background-color: #FFF; box-shadow: 0px 16px 24px rgba(2, 22, 36,
     }
 }
 .application-wrapper .content-wrapper > h3 {margin-bottom: 1.5rem;}
-.application-wrapper .content-wrapper > a {margin-top: 2rem;}
-.application-wrapper .content-wrapper ul li {padding: 1.5rem 0 1.5rem calc(1.5rem + 8px); position: relative;}
-.application-wrapper .content-wrapper ul li::before {content: ''; background-image: url('./assets/icons/circle-check.svg'); width: 28px; height: 28px; position: absolute; top: 1.5rem; left: 0;}
+.application-wrapper .content-wrapper > a {margin-top: 1rem;}
+.application-wrapper .content-wrapper ul li {padding: 1.5rem 0; display: flex; column-gap: 0.5rem;}
+.application-wrapper .content-wrapper ul li svg {width: 28px; height: 28px;}
+.application-wrapper .media-wrapper {position: relative;}
+.application-wrapper .media-wrapper img {max-width: 300px; width: auto; height: 100%;}
 
 /* Active Wrapper */
 .application-wrapper.mes-billets {display: none;}
 
 /* Service CybSafe */
 .application-wrapper.cybsafe .content-wrapper > .cards-wrapper {margin-top: 1rem;}
-.application-wrapper.cybsafe .content-wrapper > a {margin-top: 1rem; float: right;}
-.application-wrapper .media-wrapper {position: relative;}
-.application-wrapper .media-wrapper img {max-width: 300px; width: auto; height: 100%;}
+.application-wrapper.cybsafe .content-wrapper > a {float: right;}
+.application-wrapper.cybsafe .media-wrapper .features-wrapper .action-wrapper button > svg {width: 20px; height: 20px;}
 .application-wrapper.cybsafe .media-wrapper img.mockupSlideInRight {animation-name: mockupSlideInRight; animation-duration: 1000ms; animation-timing-function: ease;}
 @keyframes mockupSlideInRight {
     from {
@@ -177,11 +194,11 @@ header.active {background-color: #FFF; box-shadow: 0px 16px 24px rgba(2, 22, 36,
     }
 }
 .features-wrapper.chat, .features-wrapper.alert, .features-wrapper.localisation {display: none;}
-.application-wrapper.cybsafe .media-wrapper .features-wrapper.chat {position: absolute; top: 170px; right: -100px; z-index: 200;}
+.application-wrapper.cybsafe .media-wrapper .features-wrapper.chat {position: absolute; top: 180px; right: -100px; z-index: 200;}
 .application-wrapper.cybsafe .media-wrapper .features-wrapper.chat.chatSlideIn {animation-name: chatSlideIn; animation-duration: 800ms; animation-timing-function: ease-out;}
 .application-wrapper.cybsafe .media-wrapper .features-wrapper.chat .action-wrapper {display: flex; flex-direction: column; align-items: center; row-gap: 0.5rem;}
 .application-wrapper.cybsafe .media-wrapper .features-wrapper.chat .action-wrapper > button {width: 100%; clip-path: none;}
-.application-wrapper.cybsafe .media-wrapper .features-wrapper.chat .action-wrapper > img {width: 24px; height: 24px; filter: invert(33%) sepia(41%) saturate(4529%) hue-rotate(226deg) brightness(100%) contrast(102%);}
+.application-wrapper.cybsafe .media-wrapper .features-wrapper.chat .action-wrapper > svg {transform: rotate(-90deg); width: 20px; height: 20px;}
 @keyframes chatSlideIn {
     from {
         transform: translateX(100%);
@@ -201,14 +218,14 @@ header.active {background-color: #FFF; box-shadow: 0px 16px 24px rgba(2, 22, 36,
 }
 .application-wrapper.cybsafe .media-wrapper .features-wrapper.alert .action-wrapper {display: flex; column-gap: 0.75rem; margin-bottom: 1rem;}
 .application-wrapper.cybsafe .media-wrapper .features-wrapper.alert .action-wrapper > button {display: flex; align-items: center; justify-content: center; column-gap: 0.5rem;}
-.application-wrapper.cybsafe .media-wrapper .features-wrapper.alert .action-wrapper > button > img {width: 20px; height: 20px;}
+
 .application-wrapper .media-wrapper .card-wrapper {background-color: #FFF; border-radius: 8px; padding: 1rem;}
 .application-wrapper .media-wrapper .card-wrapper button {display: flex; align-items: center; justify-content: center; column-gap: 0.5rem; width: 100%;}
-.application-wrapper .media-wrapper .card-wrapper button > img {width: 20px; height: 20px;}
+.application-wrapper .media-wrapper .card-wrapper button > svg {width: 20px; height: 20px;}
 .application-wrapper .media-wrapper .card-wrapper .heading-wrapper {display: flex; align-items: start; justify-content: space-between; margin-bottom: 1rem;}
 .application-wrapper .media-wrapper .card-wrapper .heading-wrapper button > img {width: 20px; height: 20px;}
 .application-wrapper .media-wrapper .card-wrapper .heading-wrapper .tag {padding: 0.5rem 0.75rem; background-color: #001141; border-radius: 8px; color: #FFF; --notchSize: 10px; clip-path: polygon( 0% var(--notchSize), /* Top left */ var(--notchSize) 0%, /* Top left */ 100% 0%, /* Top right */ 100% var(--notchSize), /* Top right */ 100% calc(100% - var(--notchSize)), /* Bottom right */ calc(100% - var(--notchSize)) 100%, /* Bottom right */ var(--notchSize) 100%, /* Bottom left */ 0% 100% /* Bottom left */); display: flex; align-items: center; column-gap: 0.25rem;}
-.application-wrapper .media-wrapper .card-wrapper .heading-wrapper .tag > img {width: 14px; height: 14px;}
+.application-wrapper .media-wrapper .card-wrapper .heading-wrapper .tag > svg {width: 14px; height: 14px;}
 
 .application-wrapper.cybsafe .media-wrapper .features-wrapper.localisation {position: absolute; top: 140px; right: -70px; z-index: 200; animation-name: localisationSlideIn; animation-duration: 1000ms; animation-timing-function: ease-out;}
 @keyframes localisationSlideIn {
@@ -259,21 +276,21 @@ header.active {background-color: #FFF; box-shadow: 0px 16px 24px rgba(2, 22, 36,
         box-shadow: 0 0 0 0 rgba(15, 98, 254, 0);
     }
 }
-.outer-circle.current-location .inner-circle {background-color: #0F62FE; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center;}
-.outer-circle.current-location .inner-circle > img {width: 12px; height: 12px;}
+.outer-circle.current-location .inner-circle {background-color: #0F62FE; color: #FFF; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center;}
+.outer-circle.current-location .inner-circle > svg {width: 16px; height: 16px;}
 
 /* Accordion */
 .content-wrapper .cards-wrapper {margin-top: 2.5rem; display: flex; flex-direction: column;}
 .content-wrapper .cards-wrapper .service-card {display: flex; flex-direction: column; padding-bottom: 1.5rem;}
 .content-wrapper .cards-wrapper .service-card:nth-child(even) {border-top: 1px solid #C6C6C6; border-bottom: 1px solid #C6C6C6;}
 .content-wrapper .cards-wrapper .service-card h4 {display: flex; align-items: center; justify-content: space-between; padding-top: 1.5rem;}
-.content-wrapper .cards-wrapper .service-card img {width: 32px; height: 32px; cursor: pointer; transform: rotate(180deg); transition: 250ms ease;}
-.content-wrapper .cards-wrapper .service-card .card-content {display: none;}
+.content-wrapper .cards-wrapper .service-card svg {width: 32px; height: 32px; cursor: pointer; transform: rotate(-90deg); transition: 250ms ease;}
+.content-wrapper .cards-wrapper .service-card .card-content {max-height: 0; overflow: hidden; transition: 250ms ease;}
 .content-wrapper .cards-wrapper .service-card .card-content > p {margin-top: 1rem; margin-bottom: 0;}
 
 /* Active Accordion */
-.cards-wrapper .service-card.open .card-content {display: block;}
-.cards-wrapper .service-card.open img {transform: rotate(0);}
+.cards-wrapper .service-card.open .card-content {max-height: 100px;}
+.cards-wrapper .service-card.open svg {transform: rotate(90deg);}
 
 /* Interactive Map */
 .activity-wrapper {position: absolute; bottom: 120px; left: -24px; display: flex; flex-direction: row; column-gap: 0.5rem; width: 99%; overflow: hidden; filter: drop-shadow(0px 16px 24px rgba(0, 17, 65, 0.2));}
@@ -330,6 +347,8 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
 @media screen and (max-width: 992px) {
     .container {max-width: 960px;}
 
+    .concerts-wrapper, .conferences-wrapper, .panel-wrapper, #application-cybsafe__section, .application-wrapper.cybsafe {margin: 6rem 0;}
+
     /* Titles */
     h2 {font-size: 42px; line-height: 50px;}
     h3 {font-size: 32px; line-height: 42px;}
@@ -362,9 +381,16 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
     header .navigation__wrapper.active .mobile__navigation > .close {display: block;}
     header .navigation__wrapper.active .mobile__navigation > .open {display: none;}
 
+    /* Heading Section */
+    /* Reassurance banner */
+    .reassurance-banner {margin-top: 6rem; justify-content: center; column-gap: 2.5rem;}
+
     /* Programmation Section */
     /* Concerts */
-    .concerts-wrapper .artist-card {width: calc(100% / 3 - 0.80rem);}
+    .concerts-wrapper .artist-card {flex-basis: calc(100% / 3 - 1rem);}
+
+    /* Programmation Banner */
+    .concerts-wrapper .programmation-banner {flex-basis: calc(100% / 1.52); padding: 2rem; text-align: center;}
 
 }
 @media screen and (max-width: 768px) {
@@ -375,19 +401,22 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
     #heading__section, #programmation__section, #application-cybsafe__section {grid-column-start: 1; grid-column-end: span 12;}
     .concerts-wrapper, .conferences-wrapper, .panel-wrapper, #application-cybsafe__section, .application-wrapper.cybsafe {margin: 6rem 0;}
     
+    /* Heading Section */
+    /* Reassurance banner */
+    .reassurance-banner .reassurance-wrapper > svg {width: 240px; height: 240px;}
+
     /* Programmation Section */
     /* Concerts */
-    .concerts-wrapper .artists-wrapper {margin-top: 2rem; column-gap: 1.2rem; row-gap: 2.5rem;}
+    .concerts-wrapper .artists-wrapper {margin-top: 2rem; column-gap: 1rem; row-gap: 2.5rem;}
 
     /* Conférences */
     .conferences-wrapper .content-wrapper {row-gap: 1.2rem;}
 
     /* Panel */
-    .panel-wrapper .content-wrapper {align-items: start; row-gap: 1.2rem;}
+    .panel-wrapper .content-wrapper {row-gap: 1.2rem;}
 
     /* Programmation Banner */
-    .concerts-wrapper .programmation-banner {width: calc(100%); background-color: #F4F4F4; padding: 2rem; text-align: center;}
-    .programmation-banner {padding: 2rem;}
+    .concerts-wrapper .programmation-banner {flex-basis: calc(100% / 1.52); padding: 0.5rem 1.5rem;}
 
     /* Application Overview */
     .application-wrapper {flex-wrap: wrap; justify-content: center; row-gap: 1.5rem;}
@@ -403,9 +432,14 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
 @media screen and (max-width: 576px) {
     .container {max-width: 540px;}
     
+    /* Heading Section */
+    /* Reassurance banner */
+    .reassurance-banner {row-gap: 1rem; column-gap: 0;}
+    .reassurance-banner .reassurance-wrapper > svg {width: 200px; height: 200px;}
+
     /* Programmation Section */
     /* Concerts */
-    .concerts-wrapper .artist-card {width: calc(100% / 2 - 0.6rem);}
+    .concerts-wrapper .artist-card {flex-basis: calc(100% / 2 - 1rem);}
 
     /* Conférences */
     .conferences-wrapper .content-wrapper {justify-content: center;}
@@ -413,12 +447,13 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
     .conferences-wrapper .content-wrapper ul > li {padding: 1rem 0; display: block;}
 
     /* Panel */
+    .panel-wrapper .content-wrapper {align-items: start;}
     .panel-wrapper .content-wrapper ul {width: 100%;}
     .panel-wrapper .content-wrapper ul > li {padding: 1rem 0; display: block;}
 
     /* Programmation Banner */
-    .concerts-wrapper .programmation-banner {padding: 2rem 0; background-color: #F4F4F4;}
-    .programmation-banner {padding: 2rem 0;}
+    /* Programmation Banner */
+    .concerts-wrapper .programmation-banner {flex-basis: 100%; padding: 0;}
 
      /* Application Overview */
     .content-switcher {width: 100%;}
