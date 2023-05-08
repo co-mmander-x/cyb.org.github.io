@@ -416,7 +416,7 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
     .panel-wrapper .content-wrapper {row-gap: 1.2rem;}
 
     /* Programmation Banner */
-    .concerts-wrapper .programmation-banner {flex-basis: calc(100% / 1.52); padding: 0.5rem 1.5rem;}
+    .concerts-wrapper .programmation-banner {padding: 0.5rem 1.5rem;}
 
     /* Application Overview */
     .application-wrapper {flex-wrap: wrap; justify-content: center; row-gap: 1.5rem;}
@@ -454,6 +454,7 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
     /* Programmation Banner */
     /* Programmation Banner */
     .concerts-wrapper .programmation-banner {flex-basis: 100%; padding: 0;}
+    .programmation-banner {padding: 0;}
 
      /* Application Overview */
     .content-switcher {width: 100%;}
