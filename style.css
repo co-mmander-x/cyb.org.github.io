@@ -130,7 +130,7 @@ header.active {background-color: #FFF; box-shadow: 0px 16px 24px rgba(2, 22, 36,
 /* Programmation Section */
 /* Concerts */
 .concerts-wrapper {position: relative;}
-.concerts-wrapper .blop-bottom {position: absolute; bottom: -60px; right: -270px; width: 100%; height: auto; fill: #F4F4F4;}
+.concerts-wrapper .blop-bottom {position: absolute; bottom: 0; right: 0; width: 75%; height: auto; transform: translateX(20%); fill: #F4F4F4;}
 .concerts-wrapper .artists-wrapper {margin-top: 3rem; display: flex; flex-wrap: wrap; justify-content: space-between; column-gap: 1.25rem; row-gap: 4rem; position: relative; z-index: 200;}
 .concerts-wrapper .artist-card {flex-basis: calc(100% / 4 - 1.25rem); --notchSize: 10px; clip-path: polygon( 0% var(--notchSize), /* Top left */ var(--notchSize) 0%, /* Top left */ 100% 0%, /* Top right */ 100% var(--notchSize), /* Top right */ 100% calc(100% - var(--notchSize)), /* Bottom right */ calc(100% - var(--notchSize)) 100%, /* Bottom right */ var(--notchSize) 100%, /* Bottom left */ 0% 100% /* Bottom left */); transition: 250ms ease;}
 .concerts-wrapper .artist-card:hover {transform: scale(1.02);}
@@ -322,7 +322,7 @@ header.active {background-color: #FFF; box-shadow: 0px 16px 24px rgba(2, 22, 36,
 
 /* Interactive Map */
 .application-wrapper.interactive-map .media-wrapper .outer-circle, .media-wrapper .outer-circle .middle-circle, .media-wrapper .outer-circle .middle-circle .inner-circle {border-radius: 50%;}
-.application-wrapper.interactive-map .media-wrapper .action-wrapper {display: flex; column-gap: 0.75rem; position: absolute; top: 90px; right: 30px; width: 90%; overflow-x: hidden; filter: drop-shadow(0px 16px 24px rgba(0, 17, 65, 0.2));}
+.application-wrapper.interactive-map .media-wrapper .action-wrapper {display: flex; column-gap: 0.75rem; position: absolute; top: 90px; right: 30px; width: 75%; overflow-x: hidden; filter: drop-shadow(0px 16px 24px rgba(0, 17, 65, 0.2));}
 .application-wrapper.interactive-map .media-wrapper .action-wrapper::-webkit-scrollbar {display: none;}
 .application-wrapper .media-wrapper .action-wrapper input[type="radio"] {display: none;}
 .application-wrapper .media-wrapper .action-wrapper input[type="radio"]+label {padding: 0.25rem 0.5rem; background-color: #FFF; color: #4D5EFF; display: block; border-radius: 8px; cursor: pointer; transition: 250ms ease;}
@@ -422,16 +422,16 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
     .concerts-wrapper .programmation-banner {flex-basis: calc(100% / 1.52); padding: 2rem; text-align: center;}
 
     /* Conférences */
-    .conferences-wrapper {padding: 7rem 0 10rem 0;}
+    .conferences-wrapper {padding: 7rem 0 12rem 0;}
     .conferences-wrapper .media-wrapper {display: none;}
-    .conferences-wrapper .content-wrapper {flex-basis: 100%; align-items: center;}
-    .conferences-wrapper .content-wrapper > svg {}
+    .conferences-wrapper .content-wrapper {flex-basis: 100%; align-items: center; row-gap: 1.2rem;}
+    .conferences-wrapper .content-wrapper > svg {width: 84%; transform: translate(-54%, -44%);}
 
     /* Panel */
-    .panel-wrapper {padding: 6rem 0 8rem 0;}
+    .panel-wrapper {padding: 7rem 0 8rem 0;}
     .panel-wrapper .media-wrapper {display: none;}
-    .panel-wrapper .content-wrapper {flex-basis: 100%; align-items: center;}
-    .panel-wrapper .content-wrapper > svg {fill: #001141;}
+    .panel-wrapper .content-wrapper {flex-basis: 100%; align-items: center; row-gap: 1.2rem;}
+    .panel-wrapper .content-wrapper > svg {width: 84%; transform: translate(50%, -48%); fill: #001141;}
 }
 @media screen and (max-width: 768px) {
     .container {max-width: 720px;}
@@ -450,10 +450,13 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
     .concerts-wrapper .artists-wrapper {margin-top: 2rem; column-gap: 1rem; row-gap: 2.5rem;}
 
     /* Conférences */
+    .conferences-wrapper {padding: 6rem 0 11rem 0;}
     .conferences-wrapper .content-wrapper {row-gap: 1.2rem;}
+    .conferences-wrapper .content-wrapper > svg {width: 90%; transform: translate(-54%, -44%);}
 
     /* Panel */
     .panel-wrapper .content-wrapper {row-gap: 1.2rem;}
+    .panel-wrapper .content-wrapper > svg {width: 90%; transform: translate(50%, -48%);}
 
     /* Programmation Banner */
     .concerts-wrapper .programmation-banner {flex-basis: calc(100% / 1.52); padding: 0.5rem 1.5rem;}
@@ -466,7 +469,7 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
     /* Footer */
     footer .footer-top__wrapper {padding: 4rem 0 2rem 0; row-gap: 2rem;}
     footer .footer-top__wrapper .site-info__wrapper {grid-column-start: 1; grid-column-end: span 12;}
-    footer .footer-top__wrapper .site-info__wrapper img {width: 40%;}
+    footer .footer-top__wrapper .site-info__wrapper img {width: 30%;}
     footer .footer-top__wrapper #secondary-navigation {grid-column-start: 1; grid-column-end: span 12; gap: 0; justify-content: space-between;}
 }
 @media screen and (max-width: 576px) {
