@@ -289,7 +289,7 @@ main {overflow: hidden;}
 .content-wrapper .cards-wrapper .service-card .card-content > p {margin-top: 1rem; margin-bottom: 0;}
 
 /* Active Accordion */
-.cards-wrapper .service-card.open .card-content {max-height: 100px;}
+.cards-wrapper .service-card.open .card-content {max-height: calc(120px + 1rem);}
 .cards-wrapper .service-card.open svg {transform: rotate(90deg);}
 
 /* Interactive Map */
