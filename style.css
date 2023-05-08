@@ -238,7 +238,7 @@ header.active {background-color: #FFF; box-shadow: 0px 16px 24px rgba(2, 22, 36,
 .application-wrapper.cybsafe .media-wrapper .features-wrapper.alert .action-wrapper {display: flex; column-gap: 0.75rem; margin-bottom: 0.5rem;}
 .application-wrapper.cybsafe .media-wrapper .features-wrapper.alert .action-wrapper > button {display: flex; align-items: center; justify-content: center; column-gap: 0.5rem;}
 
-.application-wrapper .media-wrapper .card-wrapper {background-color: #FFF; border-radius: 8px; padding: 1rem; width: 312px;}
+.application-wrapper .media-wrapper .card-wrapper {background-color: #FFF; border-radius: 8px; padding: 1rem; width: 300px;}
 .application-wrapper .media-wrapper .card-wrapper button {display: flex; align-items: center; justify-content: center; column-gap: 0.5rem; width: 100%;}
 .application-wrapper .media-wrapper .card-wrapper button > svg {width: 20px; height: 20px;}
 .application-wrapper .media-wrapper .card-wrapper .heading-wrapper {display: flex; align-items: start; justify-content: space-between;}
