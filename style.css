@@ -162,7 +162,8 @@ header.active {background-color: #FFF; box-shadow: 0px 16px 24px rgba(2, 22, 36,
 
 /* Programmation Banner */
 .concerts-wrapper .programmation-banner {flex-basis: calc(100% / 2); padding: 1rem 1.5rem; text-align: left;}
-.programmation-banner {text-align: center; padding: 4rem;}
+.programmation-banner {text-align: center; padding: 4rem; position: relative;}
+.programmation-banner::before {content: ''; position: absolute; top: 0; left: 0; background-color: #001141; clip-path: path("M1280 234.783C1280 384.565 963 446 631.987 446C300.975 446 0 388.565 0 234.783C0 81 295.975 0 631.987 0C968 0 1280 85 1280 234.783Z");}
 .programmation-banner > h3 {margin-bottom: 1.5rem;}
 .programmation-banner > a {margin-top: 1rem;}
 
