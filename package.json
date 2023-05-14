@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@splinetool/runtime": "^0.9.334"
+  },
+  "name": "landing-page",
+  "version": "1.0.0",
+  "description": "Projet de fin d'études",
+  "main": "./js/main.js",
+  "devDependencies": {},
+  "scripts": {
+    "@splinetool/runtime": "./node_modules/@splinetool/runtime/build/runtime.js",
+    "splineModule": "./js/spline-module.js"
+  },
+  "author": "Laura",
+  "license": "ISC"
+}
