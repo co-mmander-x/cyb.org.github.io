@@ -1,5 +1,5 @@
 // Menu Sticky 
-window.addEventListener('scroll', ()=> {
+window.addEventListener('scroll', {passive: true}, ()=> {
     let scrollposY = window.scrollY;
     
     if (scrollposY > 50) {
