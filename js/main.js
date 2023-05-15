@@ -1,5 +1,5 @@
 // Menu Sticky 
-window.addEventListener('scroll', {passive: true}, ()=> {
+window.addEventListener('scroll', ()=> {
     let scrollposY = window.scrollY;
     
     if (scrollposY > 50) {
@@ -93,3 +93,55 @@ for (let i = 0; i < allAccordion.length; i++) {
         }
     });
 }
+
+// Animated Section on Scroll 
+// Créer un nouvel objet avec l'écran comme élément racine
+var observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            // Ajouter la classe lorsque l'élément est visible dans la fenêtre d'affichage
+            if (entry.target === mockupMap) {
+                entry.target.classList.add('elSlideOut');
+            } else if (entry.target === contentMap) {
+                entry.target.classList.add('elSlideIn');
+            } else if (entry.target === handLeft) {
+                entry.target.querySelector('.media-wrapper .metallic-hand.left').classList.add('elSlideOut');
+            }
+            else if (entry.target === overviewApp) {
+                entry.target.querySelectorAll('.switcher-wrapper .application-wrapper > .media-wrapper > img').forEach(el => {
+                    el.classList.add('elSlideOut');
+                });
+                entry.target.querySelectorAll('.switcher-wrapper .application-wrapper > .content-wrapper').forEach(el => {
+                    el.classList.add('elSlideIn');
+                });
+            }
+        } else {
+            // Supprimer la classe lorsque l'élément n'est plus visible dans la fenêtre d'affichage
+            if (entry.target === mockupMap) {
+                entry.target.classList.remove('elSlideOut');
+            } else if (entry.target === contentMap) {
+                entry.target.classList.remove('elSlideIn');
+            } else if (entry.target === handLeft) {
+                entry.target.querySelector('.media-wrapper .metallic-hand.left').classList.remove('elSlideOut');
+            }
+            else if (entry.target === overviewApp) {
+                entry.target.querySelectorAll('.switcher-wrapper .application-wrapper > .media-wrapper > img').forEach(el => {
+                    el.classList.remove('elSlideOut');
+                });
+                entry.target.querySelectorAll('.switcher-wrapper .application-wrapper > .content-wrapper').forEach(el => {
+                    el.classList.remove('elSlideIn');
+                });
+            }
+        }
+    });
+}, { root: null, threshold: [0] });
+
+// Observer les éléments cibles
+let mockupMap = document.querySelector('#interactive-map .media-wrapper > img');
+let contentMap = document.querySelector('#interactive-map .content-wrapper');
+let overviewApp = document.querySelector('.switcher-wrapper');
+let handLeft = document.querySelector('#panels__section');
+observer.observe(mockupMap);
+observer.observe(contentMap);
+observer.observe(handLeft);
+observer.observe(overviewApp);
