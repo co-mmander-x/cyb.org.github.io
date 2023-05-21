@@ -51,6 +51,7 @@ img {width: 100%; height: auto;}
 .grid__layout {display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 1.125rem; position: relative;}
 
 /* Titles */
+h1 {font-size: 6rem; line-height: 142px; font-weight: 700;}
 h2 {margin-bottom: 2rem;}
 h3 {margin-bottom: 1.5rem;}
 p {margin-bottom: 2rem;}
@@ -79,11 +80,11 @@ p {margin-bottom: 2rem;}
 /* Body */
 html {scroll-behavior: smooth;}
 body {font-family: 'PP Fragment Sans'; line-height: 24px; font-weight: 400; overflow-x: hidden; color: #001141;}
-body.active header {background-color: #FFF; box-shadow: 0px 16px 24px rgba(2, 22, 36, 0.16); animation: elSlideDown; animation-duration: 500ms; animation-timing-function: ease;}
+body.active header {position:sticky; top: 0; left: 0; background-color: #FFF; box-shadow: 0px 16px 24px rgba(2, 22, 36, 0.16); animation: elSlideDown; animation-duration: 500ms; animation-timing-function: ease;}
 
 /* Header */
 /* Navigation */
-header {position: fixed; top: 0; left: 0; z-index: 1000; width: 100%;}
+header {z-index: 1000;}
 header .navigation__wrapper {display: flex; align-items: center; justify-content: space-between;}
 header .navigation__wrapper .logo {position: relative; z-index: 1000;}
 header .navigation__wrapper #primary__navigation {padding-top: 0;}
@@ -98,7 +99,15 @@ header .navigation__wrapper #primary__navigation .menu li.current__item, header 
 header .navigation__wrapper #primary__navigation .menu li.current__item > a {box-shadow: inset 0 -4px 0 #001141;}
 
 /* Main */
-.concerts-wrapper, .conferences-wrapper, .panels-wrapper, .overview-application-wrapper, .cybsafe-wrapper {margin: 10rem 0;}
+.high-value-wrapper, .concerts-wrapper, .conferences-wrapper, .panels-wrapper, .overview-application-wrapper, .cybsafe-wrapper {margin: 10rem 0;}
+
+/* Heading */
+.heading-wrapper {margin-bottom: 10rem; display: flex; align-items: center; background-color: #EDF5FF;}
+.heading-wrapper .content-wrapper h1 > span {margin-bottom: 2rem; margin-top: -1rem;}
+
+/* High Value Banner */
+.high-value-wrapper .banner-wrapper {background-color: #EDF5FF; background-image: url('./assets/graphic_elements/letter-y.svg'); background-position: top center; background-repeat: no-repeat; grid-column-start: 2; grid-column-end: span 10; display: flex; align-items: center; justify-content: space-between; padding: 4rem 6rem;}
+.high-value-wrapper .banner-wrapper > .high-value {display: flex; flex-direction: column; align-items: center; justify-content: center; row-gap: 0.5rem;}
 
 /* Concerts */
 .concerts-wrapper > h2 {grid-column-start: 2; grid-column-end: span 10;}
@@ -109,7 +118,6 @@ header .navigation__wrapper #primary__navigation .menu li.current__item > a {box
 .artists-wrapper .artist-card .artist-content > span:first-child {margin-bottom: 0.25rem;}
 .artists-wrapper .artist-card .artist-content > span:nth-child(2) {margin-bottom: 0.75rem;}
 .artists-wrapper .artist-card .artist-content > .artist-set {display: flex; align-items: center; column-gap: 1rem;}
-
 
 /* Banner */
 .artists-wrapper.grid__layout .programmation-banner {grid-column-start: 8; grid-column-end: span 5;}
@@ -165,8 +173,7 @@ header .navigation__wrapper #primary__navigation .menu li.current__item > a {box
 /* Gestion des Accordéons*/
 .content-wrapper > h2, .content-wrapper ul > li {color: #001141;}
 .content-wrapper ul {margin-top: 2.5rem; margin-bottom: 2rem;}
-.content-wrapper ul > li {flex-wrap: wrap; row-gap: 0.5rem;}
-.content-wrapper ul > li {padding: 1.5rem 0; display: flex; cursor: pointer;}
+.content-wrapper ul > li {padding: 1.5rem 0; display: flex; flex-wrap: wrap; row-gap: 0.5rem; cursor: pointer;}
 .content-wrapper ul > li:not(:last-child) {border-bottom: 1px solid #001141;}
 .content-wrapper ul > li .heading {display: flex; align-items: center; justify-content: space-between; width: 100%;}
 .content-wrapper ul > li .heading > svg {width: 32px; height: 32px; transform: rotate(-90deg); flex-shrink: 0; transition: 250ms ease;}
@@ -176,7 +183,7 @@ header .navigation__wrapper #primary__navigation .menu li.current__item > a {box
 /* Open Accordéons */
 .content-wrapper > ul > li.open {row-gap: 1rem;}
 .content-wrapper > ul > li.open .heading > svg {transform: rotate(90deg);}
-.content-wrapper > ul > li.open > span {max-height: 160px;}
+.content-wrapper > ul > li.open > span {max-height: 370px;}
 
 /* All Features */
 /* Chat */
@@ -203,19 +210,11 @@ header .navigation__wrapper #primary__navigation .menu li.current__item > a {box
 #interactive-map .media-wrapper > img.elSlideOut {animation-name: elSlideOut; animation-duration: 1000ms; animation-timing-function: ease-out;}
 #interactive-map .content-wrapper.elSlideIn {animation-name: elSlideIn; animation-duration: 1000ms; animation-timing-function: ease-out;}
 
-/* Spline Mockup */
-canvas {filter: drop-shadow(0px 16px 24px rgba(0, 17, 65, 0.2));}
-canvas.elSlideOut {animation: elSlideOut; animation-duration: 1000ms; animation-timing-function: ease;}
-canvas.elSlideIn {animation-name: elSlideIn; animation-duration: 1000ms; animation-timing-function: ease;}
-canvas#phone-mockup__chat {position: absolute; bottom: 0; right: 0;}
-canvas#phone-mockup__alert {position: absolute; bottom: 0; right: 0; opacity: 0;}
-canvas#phone-mockup__localisation {position: absolute; bottom: 0; right: 0; opacity: 0;}
-
 /* Footer */
 footer {background-color: #7280FF;}
 footer .footer-top__wrapper {padding: 4rem 0 4.5rem 0; align-items: end;}
 footer .footer-top__wrapper .site-info__wrapper {grid-column-start: 1; grid-column-end: span 4;}
-footer .footer-top__wrapper .site-info__wrapper img {width: 50%; margin-bottom: 1rem;}
+footer .footer-top__wrapper .site-info__wrapper img {width: 16%; margin-bottom: 1rem;}
 footer .footer-top__wrapper .site-info__wrapper p {color: #FFF;}
 footer .footer-top__wrapper #secondary-navigation {display: flex; gap: 4rem; grid-column-start: 6; grid-column-end: span 6;}
 footer .footer-top__wrapper #secondary-navigation span {color: #FFF;}
@@ -265,7 +264,7 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
     header .navigation__wrapper.active .mobile__navigation > .open {display: none;}
 
     /* Main */
-    .concerts-wrapper, .conferences-wrapper, .panels-wrapper, .overview-application-wrapper, .cybsafe-wrapper {margin: 6rem 0;}
+    .high-value-wrapper, .concerts-wrapper, .conferences-wrapper, .panels-wrapper, .overview-application-wrapper, .cybsafe-wrapper {margin: 6rem 0;}
 
     /* Concerts */
     .artists-wrapper .artist-card {grid-column-end: span 4;}
@@ -304,6 +303,9 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
     /* Header */
     header .navigation__wrapper .logo {margin-top: 0.5rem;}
 
+    /* High Value Banner */
+    .high-value-wrapper .banner-wrapper {padding: 4rem;}
+
     /* Concerts */
     .artists-wrapper {row-gap: 2.5rem;}
     .artists-wrapper .artist-card {grid-column-end: span 6;}
@@ -336,6 +338,9 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
 @media screen and (max-width: 576px){
     .container {max-width: 540px;}
 
+    /* High Value Banner */
+    .high-value-wrapper .banner-wrapper {padding: 3rem 2rem; flex-wrap: wrap; justify-content: center; row-gap: 1rem;}
+
     /* Concerts */
     .artists-wrapper {grid-column-start: 1; grid-column-end: span 12; row-gap: 2.5rem;}
     .concerts-wrapper > h2 {grid-column-start: 1; grid-column-end: span 12;}
@@ -352,6 +357,7 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
     .panels-wrapper .content-wrapper {grid-column-start: 1; grid-column-end: span 12; position: initial;}
     .panels-wrapper .media-wrapper {grid-column-start: 2; grid-column-end: span 10; position: relative; top: auto; left: auto; height: auto;}
     .panels-wrapper .content-wrapper ul > li {row-gap: 0.25rem;}
+    .panels-wrapper .content-wrapper ul > li.open {row-gap: 0.75rem;}
     
     /* Bannière Programmation */
     .grid__layout > .programmation-banner {grid-column-start: 1; grid-column-end: span 12; text-align: center;}
@@ -378,6 +384,7 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
 
     /* Footer */
     footer .footer-top__wrapper #secondary-navigation {flex-wrap: wrap; gap: 1.5rem;}
+    footer .footer-top__wrapper .site-info__wrapper img {width: 60%;}
     footer .footer-bottom__wrapper {flex-direction: column;}
     footer .footer-bottom__wrapper span {width: 100%; text-align: center;}
     footer .footer-bottom__wrapper .credentials {flex-direction: column; align-items: center; gap: 0; width: 100%;}
