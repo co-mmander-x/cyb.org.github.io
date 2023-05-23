@@ -54,7 +54,7 @@ for (let i = 0; i < switcherContent.length; i++) {
 // Récupérer tous les éléments accordéon
 let allAccordion = document.querySelectorAll('.content-wrapper > ul > li');
 // Récupérer toutes les features
-let allFeatures = document.querySelectorAll('.cybsafe-wrapper > .media-wrapper > canvas');
+let allFeatures = document.querySelectorAll('.cybsafe-wrapper > .media-wrapper > video');
 
 // Ajouter un gestionnaire d'événements au clic à chaque élément accordéon
 for (let i = 0; i < allAccordion.length; i++) {
@@ -78,14 +78,12 @@ for (let i = 0; i < allAccordion.length; i++) {
                         let currentFeatureClass = currentFeature.getAttribute('data-class');
                         if (currentFeatureClass === featureClass) {
                             currentFeature.style.opacity = "1";
-                            currentFeature.style.zIndex = "300";
-                            currentFeature.style.cursor = "grab";
                             currentFeature.classList.add('elSlideIn');
+                            currentFeature.load();
                         } else {
                             currentFeature.style.opacity = "0";
-                            currentFeature.style.zIndex = "200";
-                            currentFeature.style.cursor = "none";
                             currentFeature.classList.remove('elSlideIn');
+                            
                         }
                     }
                 }
@@ -137,7 +135,7 @@ var observer = new IntersectionObserver((entries) => {
 }, { root: null, threshold: [0] });
 
 // Observer les éléments cibles
-let mockupMap = document.querySelector('#interactive-map .media-wrapper > img');
+let mockupMap = document.querySelector('#interactive-map .media-wrapper > video');
 let contentMap = document.querySelector('#interactive-map .content-wrapper');
 let overviewApp = document.querySelector('.switcher-wrapper');
 let handLeft = document.querySelector('#panels__section');
@@ -145,3 +143,14 @@ observer.observe(mockupMap);
 observer.observe(contentMap);
 observer.observe(handLeft);
 observer.observe(overviewApp);
+
+// Animated lines CybFest Logo
+anime({
+    targets: '.cybfest-animated-logo path',
+    strokeDashoffset: [anime.setDashoffset, 0],
+    easing: 'easeOutBack',
+    duration: 1000,
+    delay: function(el, i) { return i * 250 },
+    direction: 'alternate',
+    loop: true
+  });
