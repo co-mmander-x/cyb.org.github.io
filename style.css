@@ -84,6 +84,7 @@ p {margin-bottom: 2rem;}
 html {scroll-behavior: smooth;}
 body {font-family: 'PP Fragment Sans'; line-height: 24px; font-weight: 400; overflow-x: hidden; color: #001141;}
 body.active header {background-color: #FFF; box-shadow: 0px 16px 24px rgba(2, 22, 36, 0.16); animation: elSlideDown; animation-duration: 500ms; animation-timing-function: ease;}
+section {overflow-y: hidden;}
 
 /* Header */
 /* Navigation */
@@ -130,21 +131,21 @@ header .navigation__wrapper #primary__navigation .menu li.current__item > a {box
 
 /* Conférences */
 .conferences-wrapper {padding: 6rem 0;}
-.conferences-wrapper .content-wrapper {grid-column-start: 2; grid-column-end: span 5;}
+.conferences-wrapper .content-wrapper {grid-column-start: 2; grid-column-end: span 7;}
 .conferences-wrapper .content-wrapper ul > li {row-gap: 0.5rem;}
-.conferences-wrapper .media-wrapper {grid-column-start: 7; grid-column-end: span 5;}
+/* .conferences-wrapper .media-wrapper {grid-column-start: 7; grid-column-end: span 5;} */
 
 .media-wrapper {position: relative;}
-.media-wrapper > .metallic-hand {position: absolute;}
+/* .media-wrapper > .metallic-hand {position: absolute;}
 .conferences-wrapper .media-wrapper > .metallic-hand.up {position: absolute; top: -20px; left: 30px; transform: rotate(10deg); transition: 250ms ease;}
-.conferences-wrapper .media-wrapper > .metallic-hand.up:hover {transform: rotate(0);}
+.conferences-wrapper .media-wrapper > .metallic-hand.up:hover {transform: rotate(0);} */
 
 /* Tables rondes */
-.panels-wrapper .content-wrapper {grid-column-start: 7; grid-column-end: span 5;}
+.panels-wrapper .content-wrapper {grid-column-start: 5; grid-column-end: span 7;}
 .panels-wrapper .media-wrapper {grid-column-start: 2; grid-column-end: span 5;}
 .panels-wrapper .content-wrapper ul > li {row-gap: 0.5rem;}
-.panels-wrapper .media-wrapper > .metallic-hand.left {position: absolute; top: 90px; left: -190px;}
-.panels-wrapper .media-wrapper > .metallic-hand.left.elSlideOut {animation-name: elSlideOut; animation-duration: 800ms; animation-timing-function: ease-out;}
+/* .panels-wrapper .media-wrapper > .metallic-hand.left {position: absolute; top: 90px; left: -190px;}
+.panels-wrapper .media-wrapper > .metallic-hand.left.elSlideOut {animation-name: elSlideOut; animation-duration: 800ms; animation-timing-function: ease-out;} */
 
 /* Bannière Programmation */
 .grid__layout > .programmation-banner {grid-column-start: 3; grid-column-end: span 8; text-align: center;}
@@ -260,6 +261,9 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
     header .navigation__wrapper.active .mobile__navigation > .close {display: block;}
     header .navigation__wrapper.active .mobile__navigation > .open {display: none;}
 
+    /* Heading */
+    .heading-wrapper {margin-bottom: 6rem;}
+
     /* Main */
     .high-value-wrapper, .concerts-wrapper, .conferences-wrapper, .panels-wrapper, .overview-application-wrapper, .cybsafe-wrapper {margin: 6rem 0;}
 
@@ -271,14 +275,14 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
 
     /* Conférences */
     .conferences-wrapper {padding: 0}
-    .conferences-wrapper .content-wrapper {grid-column-start: 2; grid-column-end: span 6; position: relative; z-index: 100;}
-    .conferences-wrapper .media-wrapper {grid-column-start: 7; grid-column-end: span 5; position: absolute; right: 0; bottom: -30px; height: 100%;}
-    .conferences-wrapper .media-wrapper > .metallic-hand.up {z-index: 200;}
+    .conferences-wrapper .content-wrapper {grid-column-start: 2; grid-column-end: span 10; position: relative; z-index: 100;}
+    /* .conferences-wrapper .media-wrapper {grid-column-start: 7; grid-column-end: span 5; position: absolute; right: 0; bottom: -30px; height: 100%;}
+    .conferences-wrapper .media-wrapper > .metallic-hand.up {z-index: 200;} */
 
     /* Tables rondes */
-    .panels-wrapper .content-wrapper {grid-column-start: 6; grid-column-end: span 6; position: relative; z-index: 100;}
-    .panels-wrapper .media-wrapper {grid-column-start: 2; grid-column-end: span 5; position: absolute; left: 0; top: 0; height: 100%;}
-    .panels-wrapper .media-wrapper > .metallic-hand.left {z-index: 200; left: -110px;}
+    .panels-wrapper .content-wrapper {grid-column-start: 2; grid-column-end: span 10; position: relative; z-index: 100;}
+    /* .panels-wrapper .media-wrapper {grid-column-start: 2; grid-column-end: span 5; position: absolute; left: 0; top: 0; height: 100%;}
+    .panels-wrapper .media-wrapper > .metallic-hand.left {z-index: 200; left: -110px;} */
 
     /* L'application CybFest */
     .application-wrapper > .media-wrapper {align-self: center;}
@@ -300,8 +304,13 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
     /* Header */
     header .navigation__wrapper .logo {margin-top: 0.5rem;}
 
+    
+    /* Heading */
+    .heading-wrapper {flex-wrap: wrap;}
+    .heading-wrapper .content-wrapper h1 > span {margin-bottom: 1rem; margin-top: 0;}
+
     /* High Value Banner */
-    .high-value-wrapper .banner-wrapper {padding: 4rem;}
+    .high-value-wrapper .banner-wrapper {padding: 2rem 4rem;}
 
     /* Concerts */
     .artists-wrapper {row-gap: 2.5rem;}
@@ -325,6 +334,10 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
 
     /* Gestion des mockups */
     .cybsafe-wrapper .media-wrapper {grid-column-start: 9; grid-column-end: span 4;}
+    .cybsafe-wrapper .media-wrapper > video {max-width: 100%;}
+
+     /* Interactive Map */
+     #interactive-map .media-wrapper > video {max-width: 100%;}
 
     /* Footer */
     footer .footer-top__wrapper {padding: 4rem 0 2rem 0; row-gap: 2rem;}
@@ -336,7 +349,7 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
     .container {max-width: 540px;}
 
     /* High Value Banner */
-    .high-value-wrapper .banner-wrapper {padding: 3rem 2rem; flex-wrap: wrap; justify-content: center; row-gap: 1rem;}
+    .high-value-wrapper .banner-wrapper {padding: 3rem 0; flex-direction: column; justify-content: center; row-gap: 1rem; grid-column-start: 1; grid-column-end: span 12;}
 
     /* Concerts */
     .artists-wrapper {grid-column-start: 1; grid-column-end: span 12; row-gap: 2.5rem;}
@@ -360,7 +373,7 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
     .grid__layout > .programmation-banner {grid-column-start: 1; grid-column-end: span 12; text-align: center;}
 
     /* L'application CybFest */
-    .application-wrapper > .media-wrapper {grid-column-start: 4; grid-column-end: span 6;}
+    .application-wrapper > .media-wrapper {grid-column-start: 3; grid-column-end: span 8;}
     .content-wrapper > a {display: block; text-align: center;}
     
     .overview-application-wrapper > .content-switcher input[type="radio"]+label {width: calc(100%);}
@@ -370,7 +383,7 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
     
     /* Le service CybSafe */
     /* Les Accordéons */
-    .cybsafe-wrapper .content-wrapper {grid-column-start: 1; grid-column-end: span 12; order: 2;}
+    .cybsafe-wrapper .content-wrapper {grid-column-start: 1; grid-column-end: span 12; order: 2; margin-top: 2.5rem;}
     .cybsafe-wrapper .content-wrapper > a {float: none; display: block; text-align: center;}
 
     /* Gestion des mockups */
