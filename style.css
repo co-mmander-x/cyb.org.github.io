@@ -106,9 +106,57 @@ header .navigation__wrapper #primary__navigation .menu li.current__item > a {box
 .high-value-wrapper, .concerts-wrapper, .conferences-wrapper, .panels-wrapper, .overview-application-wrapper, .cybsafe-wrapper {margin: 10rem 0;}
 
 /* Heading */
-.heading-wrapper {margin-top: 3rem; margin-bottom: 10rem; display: flex; align-items: center; column-gap: 4rem;}
-.heading-wrapper .media-wrapper > svg {width: 100%; height: auto; flex-basis: 50%;}
-.heading-wrapper .content-wrapper h1 > span {margin-bottom: 2rem; margin-top: -1rem;}
+.heading-wrapper {margin-top: 3rem; margin-bottom: 10rem; display: flex; align-items: end; column-gap: 4rem;}
+.heading-wrapper .media-wrapper {gap: 0.6rem; order: 2;}
+.heading-wrapper .media-wrapper svg {width: 100%; height: auto;}
+.heading-wrapper .media-wrapper .c, .heading-wrapper .media-wrapper .y, .heading-wrapper .media-wrapper .b, .heading-wrapper .media-wrapper .f, .heading-wrapper .media-wrapper .e-2, .heading-wrapper .media-wrapper .s, .heading-wrapper .media-wrapper .t-2 {grid-column-end: span 3;}
+.heading-wrapper .media-wrapper .c {grid-column-start: 1;}
+.heading-wrapper .media-wrapper .y {grid-column-start: 4;}
+.heading-wrapper .media-wrapper .b {grid-column-start: 7;}
+.heading-wrapper .media-wrapper .f {grid-column-start: 1;}
+.heading-wrapper .media-wrapper .e-2 {grid-column-start: 4;}
+.heading-wrapper .media-wrapper .s {grid-column-start: 7;}
+.heading-wrapper .media-wrapper .t-2 {grid-column-start: 10;}
+
+.heading-wrapper .media-wrapper .c > path, .heading-wrapper .media-wrapper .b > path, .heading-wrapper .media-wrapper .e > path, .heading-wrapper .media-wrapper .e-2, .heading-wrapper .media-wrapper .t-2, .heading-wrapper .media-wrapper .j, .heading-wrapper .media-wrapper .i, .heading-wrapper .media-wrapper .e-3 {fill: #001141;}
+.heading-wrapper .media-wrapper .c > path.line, .heading-wrapper .media-wrapper .b > path.line, .heading-wrapper .media-wrapper .e-2 > path.line, .heading-wrapper .media-wrapper .t-2 > path.line, .heading-wrapper .media-wrapper .j > path.line, .heading-wrapper .media-wrapper .i > path.line, .heading-wrapper .media-wrapper .e-3 > path.line {fill: none; stroke: #4D5EFF; stroke-width: 60; stroke-dasharray: 2000; stroke-dashoffset: 2000;}
+.heading-wrapper .media-wrapper .y > path, .heading-wrapper .media-wrapper .f > path, .heading-wrapper .media-wrapper .s > path, .heading-wrapper .media-wrapper .u > path, .heading-wrapper .media-wrapper .l > path, .heading-wrapper .media-wrapper .t > path {stroke:#001141; stroke-width: 10;}
+.heading-wrapper .media-wrapper .c > path.line {animation: draw 5000ms 1000ms infinite forwards cubic-bezier(0.600, -0.280, 0.735, 0.045);}
+.heading-wrapper .media-wrapper .b > path.line {animation: draw 5000ms infinite forwards cubic-bezier(0.600, -0.280, 0.735, 0.045);}
+.heading-wrapper .media-wrapper .e-2 > path.line {animation: draw 5000ms 500ms infinite forwards cubic-bezier(0.600, -0.280, 0.735, 0.045);}
+.heading-wrapper .media-wrapper .t-2 > path.line {animation: draw 5000ms 1000ms infinite forwards cubic-bezier(0.600, -0.280, 0.735, 0.045);}
+.heading-wrapper .media-wrapper .y > path, .heading-wrapper .media-wrapper .s > path, .heading-wrapper .media-wrapper .l > path {animation: glitch 40000ms infinite cubic-bezier(0.550, 0.085, 0.680, 0.530);}
+.heading-wrapper .media-wrapper .f > path, .heading-wrapper .media-wrapper .u > path, .heading-wrapper .media-wrapper .t > path {animation: glitch 60000ms forwards infinite cubic-bezier(0.550, 0.085, 0.680, 0.530);}
+@keyframes draw {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    25% {
+        stroke-dashoffset: 1500;
+    }
+    50% {
+        stroke-dashoffset: 2000;
+    }
+    75% {
+        stroke-dashoffset: 1500;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes glitch { 
+    0% {
+        stroke-dashoffset: 100; stroke-dasharray: 1000;
+    }
+    50% {
+        stroke-dashoffset: 10; stroke-dasharray: 100;
+    }
+    100% {
+        stroke-dashoffset: 100; stroke-dasharray: 1000;
+    }
+}
+.heading-wrapper .content-wrapper {margin-top: 1.2rem; order: 1;}
+.heading-wrapper .content-wrapper h1 {margin-bottom: 1rem;}
 
 /* High Value Banner */
 .high-value-wrapper .banner-wrapper {background-color: #EDF5FF; background-position: top center; background-repeat: no-repeat; grid-column-start: 2; grid-column-end: span 10; display: flex; align-items: center; justify-content: space-between; padding: 4rem 6rem;}
@@ -117,14 +165,19 @@ header .navigation__wrapper #primary__navigation .menu li.current__item > a {box
 /* Concerts */
 .concerts-wrapper > h2 {grid-column-start: 2; grid-column-end: span 10;}
 .artists-wrapper {row-gap: 4rem; grid-column-start: 2; grid-column-end: span 10;}
-.artists-wrapper .artist-card {grid-column-end: span 3;}
-.artists-wrapper .artist-card > img {aspect-ratio: 1/1; object-fit: cover; --notchSize: 10px; clip-path: polygon( 0% var(--notchSize), /* Top left */ var(--notchSize) 0%, /* Top left */ 100% 0%, /* Top right */ 100% var(--notchSize), /* Top right */ 100% calc(100% - var(--notchSize)), /* Bottom right */ calc(100% - var(--notchSize)) 100%, /* Bottom right */ var(--notchSize) 100%, /* Bottom left */ 0% 100% /* Bottom left */); transition: 250ms ease;}
-.artists-wrapper .artist-card > img:hover {transform: scale(1.04);}
+.artists-wrapper .artist-card {grid-column-end: span 3; transition: 250ms ease; position: relative;}
+.artists-wrapper .artist-card::before, .artists-wrapper .artist-card::after {content: ''; background-color: #FFF; position: absolute; z-index: 1; transition: 250ms ease;}
+.artists-wrapper .artist-card::before {content: ''; top: 0; right: 0; z-index: 1; width: 0; height: 2px;}
+.artists-wrapper .artist-card::after {content: ''; bottom: 125px; left: 0; z-index: 1; height: 0; width: 2px;}
+.artists-wrapper .artist-card:hover {transform: scale(1.04);}
+.artists-wrapper .artist-card:hover::before {width: 70%;}
+.artists-wrapper .artist-card:hover::after {height: 30%;}
+.artists-wrapper .artist-card > img {aspect-ratio: 1/1; object-fit: cover; --notchSize: 10px; clip-path: polygon( 0% var(--notchSize), /* Top left */ var(--notchSize) 0%, /* Top left */ 100% 0%, /* Top right */ 100% var(--notchSize), /* Top right */ 100% calc(100% - var(--notchSize)), /* Bottom right */ calc(100% - var(--notchSize)) 100%, /* Bottom right */ var(--notchSize) 100%, /* Bottom left */ 0% 100% /* Bottom left */);}
 .artists-wrapper .artist-card .artist-content {margin-top: 1rem;}
-.artists-wrapper .artist-card .artist-content > span:first-child {margin-bottom: 0.25rem;}
+.artists-wrapper .artist-card .artist-content > span:first-child {margin-bottom: 0.25rem; color: #001141;}
 .artists-wrapper .artist-card .artist-content > span:nth-child(2) {margin-bottom: 0.75rem;}
 .artists-wrapper .artist-card .artist-content > .artist-set {display: flex; align-items: center; column-gap: 1rem;}
-.artists-wrapper .artist-card .artist-content > .artist-set > span {opacity: 0.7;}
+.artists-wrapper .artist-card .artist-content > .artist-set > span {opacity: 0.7; color: #001141;}
 
 /* Banner */
 .artists-wrapper.grid__layout .programmation-banner {grid-column-start: 8; grid-column-end: span 5;}
@@ -133,19 +186,13 @@ header .navigation__wrapper #primary__navigation .menu li.current__item > a {box
 .conferences-wrapper {padding: 6rem 0;}
 .conferences-wrapper .content-wrapper {grid-column-start: 2; grid-column-end: span 7;}
 .conferences-wrapper .content-wrapper ul > li {row-gap: 0.5rem;}
-/* .conferences-wrapper .media-wrapper {grid-column-start: 7; grid-column-end: span 5;} */
 
 .media-wrapper {position: relative;}
-/* .media-wrapper > .metallic-hand {position: absolute;}
-.conferences-wrapper .media-wrapper > .metallic-hand.up {position: absolute; top: -20px; left: 30px; transform: rotate(10deg); transition: 250ms ease;}
-.conferences-wrapper .media-wrapper > .metallic-hand.up:hover {transform: rotate(0);} */
 
 /* Tables rondes */
 .panels-wrapper .content-wrapper {grid-column-start: 5; grid-column-end: span 7;}
 .panels-wrapper .media-wrapper {grid-column-start: 2; grid-column-end: span 5;}
 .panels-wrapper .content-wrapper ul > li {row-gap: 0.5rem;}
-/* .panels-wrapper .media-wrapper > .metallic-hand.left {position: absolute; top: 90px; left: -190px;}
-.panels-wrapper .media-wrapper > .metallic-hand.left.elSlideOut {animation-name: elSlideOut; animation-duration: 800ms; animation-timing-function: ease-out;} */
 
 /* Bannière Programmation */
 .grid__layout > .programmation-banner {grid-column-start: 3; grid-column-end: span 8; text-align: center;}
@@ -157,7 +204,7 @@ header .navigation__wrapper #primary__navigation .menu li.current__item > a {box
 
 /* Media / Image */
 .application-wrapper > .media-wrapper {grid-column-start: 2; grid-column-end: span 3; align-self: center;}
-.application-wrapper > .media-wrapper > img {max-width: 80%; filter: drop-shadow(0px 16px 24px rgba(0, 17, 65, 0.2));}
+.application-wrapper > .media-wrapper > video {max-width: 80%; filter: drop-shadow(0px 16px 24px rgba(0, 17, 65, 0.2));}
 
 /* Switcher Boutique / Mes Billets */
 .switcher-wrapper {position: relative;}
@@ -262,7 +309,9 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
     header .navigation__wrapper.active .mobile__navigation > .open {display: none;}
 
     /* Heading */
-    .heading-wrapper {margin-bottom: 6rem;}
+    .heading-wrapper {margin-bottom: 6rem; flex-wrap: wrap;}
+    .heading-wrapper .media-wrapper {order: 1;}
+    .heading-wrapper .content-wrapper {margin-top: 1.2rem; order: 2;}
 
     /* Main */
     .high-value-wrapper, .concerts-wrapper, .conferences-wrapper, .panels-wrapper, .overview-application-wrapper, .cybsafe-wrapper {margin: 6rem 0;}
@@ -304,11 +353,6 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
     /* Header */
     header .navigation__wrapper .logo {margin-top: 0.5rem;}
 
-    
-    /* Heading */
-    .heading-wrapper {flex-wrap: wrap;}
-    .heading-wrapper .content-wrapper h1 > span {margin-bottom: 1rem; margin-top: 0;}
-
     /* High Value Banner */
     .high-value-wrapper .banner-wrapper {padding: 2rem 4rem;}
 
@@ -325,7 +369,7 @@ footer .footer-bottom__wrapper .credentials a {padding: 1.5rem 0; text-decoratio
     .overview-application-wrapper > .content-switcher {grid-column-start: 1; grid-column-end: span 12; justify-content: center;}
     .overview-application-wrapper > .content-switcher input[type="radio"]+label {width: calc(100% / 4);}
     .application-wrapper > .media-wrapper {grid-column-start: 1; grid-column-end: span 4;}
-    .application-wrapper > .media-wrapper > img {max-width: 100%;}
+    .application-wrapper > .media-wrapper > video {max-width: 100%;}
     .application-wrapper > .content-wrapper {grid-column-end: span 8;}
 
     /* Le service CybSafe */

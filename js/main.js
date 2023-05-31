@@ -102,8 +102,6 @@ var observer = new IntersectionObserver((entries) => {
                 entry.target.classList.add('elSlideOut');
             } else if (entry.target === contentMap) {
                 entry.target.classList.add('elSlideIn');
-            } else if (entry.target === handLeft) {
-                entry.target.querySelector('.media-wrapper .metallic-hand.left').classList.add('elSlideOut');
             }
             else if (entry.target === overviewApp) {
                 entry.target.querySelectorAll('.switcher-wrapper .application-wrapper > .media-wrapper > img').forEach(el => {
@@ -119,8 +117,6 @@ var observer = new IntersectionObserver((entries) => {
                 entry.target.classList.remove('elSlideOut');
             } else if (entry.target === contentMap) {
                 entry.target.classList.remove('elSlideIn');
-            } else if (entry.target === handLeft) {
-                entry.target.querySelector('.media-wrapper .metallic-hand.left').classList.remove('elSlideOut');
             }
             else if (entry.target === overviewApp) {
                 entry.target.querySelectorAll('.switcher-wrapper .application-wrapper > .media-wrapper > img').forEach(el => {
@@ -141,16 +137,4 @@ let overviewApp = document.querySelector('.switcher-wrapper');
 let handLeft = document.querySelector('#panels__section');
 observer.observe(mockupMap);
 observer.observe(contentMap);
-observer.observe(handLeft);
 observer.observe(overviewApp);
-
-// Animated lines CybFest Logo
-anime({
-    targets: '.cybfest-animated-logo path',
-    strokeDashoffset: [anime.setDashoffset, 0],
-    easing: 'easeOutBack',
-    duration: 1000,
-    delay: function(el, i) { return i * 250 },
-    direction: 'alternate',
-    loop: true
-  });
