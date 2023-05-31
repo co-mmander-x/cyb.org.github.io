@@ -256,7 +256,7 @@ header .navigation__wrapper #primary__navigation .menu li.current__item > a {box
 #interactive-map .content-wrapper.elSlideIn {animation-name: elSlideIn; animation-duration: 1000ms; animation-timing-function: ease-out;}
 
 /* Footer */
-footer {background-color: #7280FF;}
+footer {background-color: #001141;}
 footer .footer-top__wrapper {padding: 4rem 0 4.5rem 0; align-items: end;}
 footer .footer-top__wrapper .site-info__wrapper {grid-column-start: 1; grid-column-end: span 4;}
 footer .footer-top__wrapper .site-info__wrapper img {width: 16%; margin-bottom: 1rem;}
